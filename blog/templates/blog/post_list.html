@@ -1,13 +1,25 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+
     {% for post in posts %}
-        <div class="post">
-            <div class="date">
-                {{ post.published_date }}
-            </div>
-            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
+
+ <div class="container marketing">
+
+
+        <!-- Three columns of text below the carousel -->
+        <div class="row featurette" style="margin-top: -80px;" >
+          <div class="col-md-7" >
+              <h2 class="featurette-heading"><a style="color: #C7667B;" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                <div class="date">
+
+            </div ><span class="text-muted" >{{ post.published_date }}</span></h2>
+            <p class="lead" style="color: #A0374E;" >{{ post.text|linebreaksbr }}</p>
+          </div>
         </div>
+
+        <hr class="featurette-divider">
+ </div>
     {% endfor %}
 {% endblock %}
+

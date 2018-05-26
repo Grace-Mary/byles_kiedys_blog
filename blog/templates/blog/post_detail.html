@@ -13,6 +13,8 @@
         {% endif %}
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
-        <img src="{{ post.image.url }} " />
+        <img src="{{ post.image_one.url }} " />
+        <img src="{{ post.image_two.url }} " />
+        <img src="{{ post.image_three.url }} " />
     </div>
 {% endblock %}
