@@ -1,6 +1,9 @@
 {% extends 'blog/base.html' %}
 
-{% block content %}
+
+
+
+{% block post_list %}
 
     {% for post in posts %}
 
@@ -8,18 +11,27 @@
 
 
         <!-- Three columns of text below the carousel -->
-        <div class="row featurette" style="margin-top: -80px;" >
-          <div class="col-md-7" >
+        <div class="row featurette" >
+<div class="col-md-1">
+
+            </div>
+          <div class="col-md-6" style="background-color: f5f2ee;">
               <h2 class="featurette-heading"><a style="color: #C7667B;" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
                 <div class="date">
 
             </div ><span class="text-muted" >{{ post.published_date }}</span></h2>
             <p class="lead" style="color: #A0374E;" >{{ post.text|linebreaksbr }}</p>
           </div>
+            <div class="col-md-4" style="background-color: f5f2ee; border-radius: 15px;">
+               <img src="{{ post.image_one.url }} " width="365" height="365"/>
+            </div>
+            <div class="col-md-1">
+
+            </div>
         </div>
 
         <hr class="featurette-divider">
  </div>
     {% endfor %}
-{% endblock %}
+{% endblock post_list %}
 

@@ -1,6 +1,6 @@
 {% extends 'blog/base.html' %}
 
-{% block content %}
+{% block post_list %}
     <div class="post">
         {% if post.published_date %}
             <div class="date">
@@ -17,4 +17,4 @@
         <img src="{{ post.image_two.url }} " />
         <img src="{{ post.image_three.url }} " />
     </div>
-{% endblock %}
+{% endblock post_list%}
