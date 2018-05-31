@@ -1,20 +1,88 @@
 {% extends 'blog/base.html' %}
 
-{% block post_list %}
-    <div class="post">
-        {% if post.published_date %}
-            <div class="date">
-                {{ post.published_date }}
-            </div>
-        {% endif %}
+{% block post_detail %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-1">
 
-        {% if user.is_authenticated %}
-        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-        {% endif %}
-        <h1>{{ post.title }}</h1>
-        <p>{{ post.text|linebreaksbr }}</p>
-        <img src="{{ post.image_one.url }} " />
-        <img src="{{ post.image_two.url }} " />
-        <img src="{{ post.image_three.url }} " />
+        </div>
+        <div class="col-md-10">
+
+            <h2 class="featurette-heading"><a style="color: #C7667B;" href="{% url 'post_detail' pk=post.pk %}">
+                {{post.title }}</a></h2>
+
+            <p class="lead" style="color: #A0374E;">{{ post.text|linebreaksbr }}</p>
+            <div class="col-md-1">
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+
+            <div class="col-md-10">
+                <img src="{{ post.image_one.url }} "/>
+            </div>
+
+            <div class="col-md-1">
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+
+            <div class="col-md-10">
+               <p class="lead" style="color: #A0374E;">{{ post.text_two|linebreaksbr }}</p>
+            </div>
+
+            <div class="col-md-1">
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+
+            <div class="col-md-10">
+                <img src="{{ post.image_two.url }} "/>
+            </div>
+
+            <div class="col-md-1">
+            </div>
+
+        </div>
+
+         <div class="row">
+            <div class="col-md-1">
+            </div>
+
+            <div class="col-md-10">
+               <p class="lead" style="color: #A0374E;">{{ post.text_three|linebreaksbr }}</p>
+            </div>
+
+            <div class="col-md-1">
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-1">
+
+            </div>
+            <div class="col-md-10">
+
+                <img src="{{ post.image_three.url }} "/>
+            </div>
+            <div class="col-md-1">
+
+
+            </div>
+        </div>
     </div>
-{% endblock post_list%}
+    {% endblock post_detail%}
